@@ -38,6 +38,12 @@ app.get("/view", function(req, res) {
  
 });
 
+// Displays all reservations
+app.get("/api/booking", function(req, res) {
+  return res.json(newBooking);
+  console.log(newBooking)
+});
+
 //====== view Individual booking =============
 app.get("/book/:uniqueID", function(req, res) {
   var currentBookings = req.params.uniqueID;
