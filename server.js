@@ -7,7 +7,7 @@ var PORT = process.env.PORT || 3030;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//=====Code==================
+//==========Routes==================
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
@@ -21,8 +21,10 @@ app.get("/", function(req, res) {
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "table.html"));
-  console.log("test2")
+  console.log("test3")
 });
+
+
 
 // Starts the server to begin listening
 // =============================================================
