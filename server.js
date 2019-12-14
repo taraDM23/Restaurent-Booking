@@ -9,17 +9,17 @@ app.use(express.json());
 
 //==========Routes==================
 
-app.get("/", function(req, res) {
+app.get("/home", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
   console.log("test")
 });
 
-app.get("/", function(req, res) {
+app.get("/book", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
   console.log("test2")
 });
 
-app.get("/", function(req, res) {
+app.get("/view", function(req, res) {
   res.sendFile(path.join(__dirname, "table.html"));
   console.log("test3")
 });
