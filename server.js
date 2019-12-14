@@ -14,6 +14,16 @@ app.get("/", function(req, res) {
   console.log("test")
 });
 
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
+  console.log("test2")
+});
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "table.html"));
+  console.log("test2")
+});
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
