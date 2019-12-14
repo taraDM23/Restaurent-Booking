@@ -7,6 +7,7 @@ var PORT = process.env.PORT || 3030;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 //==========Reservation array ===============
 
 var newBooking = [
@@ -17,6 +18,8 @@ var newBooking = [
     uniqueID: 900,
     
   }]
+
+
 
 //==========Routes==================
 
