@@ -8,28 +8,62 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+//==========Reservation array ===============
+
+var newBooking = [
+  {
+    name: "yoda",
+    phoneNumber: 43957369867 ,
+    email: "Jedi@Master",
+    uniqueID: 900,
+    
+  }]
+
+
 
 //==========Routes==================
 
-app.get("/home", function(req, res) {
+app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
-  console.log("test")
+  
 });
 
 app.get("/book", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
-  console.log("test2")
+ 
 });
 
 app.get("/view", function(req, res) {
   res.sendFile(path.join(__dirname, "table.html"));
-  console.log("test3")
+ 
 });
 
+//====== view Individual booking =============
+app.get("/book/:uniqueID", function(req, res) {
+  var currentBookings = req.params.uniqueID;
 
+  console.log(currentBookings);
 
-// Starts the server to begin listening
-// =============================================================
+  for (var i = 0; i < uniqueID.length; i++) {
+    if (currentBookings === uniqueID[i].routeName) {
+      return res.json(uniqueID[i]);
+    }
+  }
+
+  return res.json(false);
+});
+
+//====== Make reservation =============
+
+app.post("/book", function(req, res) {
+
+  const newReservation = req.body;
+  console.log(newReservation);
+  newBooking.push(newReservation);
+  res.json(newReservation);
+});
+
+// ====================== Starts the server =======================================
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
